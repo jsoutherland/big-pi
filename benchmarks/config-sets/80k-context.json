@@ -1,0 +1,95 @@
+{
+  "name": "80k-context-nudge-matrix",
+  "targetContextWindowTokens": 80000,
+  "description": "Compare growth, percentage, hybrid, remaining-wording, and emergency thresholds with an 80,000-token model context window.",
+  "configurations": [
+    {
+      "id": "growth-20k",
+      "description": "Growth-only advisory every 20k effective context tokens.",
+      "config": {
+        "nudge": { "mode": "growth", "growthTriggerTokens": 20000, "thresholdPercentage": 70, "repeatEveryPercentage": 10, "display": "used" },
+        "emergency": { "enabled": true, "pressureThresholdPercentage": 90, "targetPercentageAfterCompression": 70, "maxAttemptsPerTurn": 2 }
+      }
+    },
+    {
+      "id": "growth-40k",
+      "description": "Growth-only advisory every 40k effective context tokens.",
+      "config": {
+        "nudge": { "mode": "growth", "growthTriggerTokens": 40000, "thresholdPercentage": 70, "repeatEveryPercentage": 10, "display": "used" },
+        "emergency": { "enabled": true, "pressureThresholdPercentage": 90, "targetPercentageAfterCompression": 70, "maxAttemptsPerTurn": 2 }
+      }
+    },
+    {
+      "id": "percentage-60-every10-used",
+      "description": "Percentage-only advisory from 60% used, repeating every 10 points, worded as used context.",
+      "config": {
+        "nudge": { "mode": "percentage", "growthTriggerTokens": 40000, "thresholdPercentage": 60, "repeatEveryPercentage": 10, "display": "used" },
+        "emergency": { "enabled": true, "pressureThresholdPercentage": 90, "targetPercentageAfterCompression": 70, "maxAttemptsPerTurn": 2 }
+      }
+    },
+    {
+      "id": "percentage-70-every10-used",
+      "description": "Percentage-only advisory from 70% used, repeating every 10 points, worded as used context.",
+      "config": {
+        "nudge": { "mode": "percentage", "growthTriggerTokens": 40000, "thresholdPercentage": 70, "repeatEveryPercentage": 10, "display": "used" },
+        "emergency": { "enabled": true, "pressureThresholdPercentage": 90, "targetPercentageAfterCompression": 70, "maxAttemptsPerTurn": 2 }
+      }
+    },
+    {
+      "id": "percentage-70-every5-used",
+      "description": "Percentage-only advisory from 70% used, repeating every 5 points, worded as used context.",
+      "config": {
+        "nudge": { "mode": "percentage", "growthTriggerTokens": 40000, "thresholdPercentage": 70, "repeatEveryPercentage": 5, "display": "used" },
+        "emergency": { "enabled": true, "pressureThresholdPercentage": 90, "targetPercentageAfterCompression": 70, "maxAttemptsPerTurn": 2 }
+      }
+    },
+    {
+      "id": "percentage-80-every5-used",
+      "description": "Percentage-only advisory from 80% used, repeating every 5 points, worded as used context.",
+      "config": {
+        "nudge": { "mode": "percentage", "growthTriggerTokens": 40000, "thresholdPercentage": 80, "repeatEveryPercentage": 5, "display": "used" },
+        "emergency": { "enabled": true, "pressureThresholdPercentage": 90, "targetPercentageAfterCompression": 70, "maxAttemptsPerTurn": 2 }
+      }
+    },
+    {
+      "id": "percentage-70-every10-remaining",
+      "description": "Same percentage checkpoints as percentage-70-every10-used, but advisories use remaining-context wording.",
+      "config": {
+        "nudge": { "mode": "percentage", "growthTriggerTokens": 40000, "thresholdPercentage": 70, "repeatEveryPercentage": 10, "display": "remaining" },
+        "emergency": { "enabled": true, "pressureThresholdPercentage": 90, "targetPercentageAfterCompression": 70, "maxAttemptsPerTurn": 2 }
+      }
+    },
+    {
+      "id": "hybrid-20k-70-every10-used",
+      "description": "Hybrid advisory: every 20k effective context tokens or each 70%+ percentage checkpoint; used wording.",
+      "config": {
+        "nudge": { "mode": "hybrid", "growthTriggerTokens": 20000, "thresholdPercentage": 70, "repeatEveryPercentage": 10, "display": "used" },
+        "emergency": { "enabled": true, "pressureThresholdPercentage": 90, "targetPercentageAfterCompression": 70, "maxAttemptsPerTurn": 2 }
+      }
+    },
+    {
+      "id": "hybrid-40k-70-every10-used",
+      "description": "Hybrid advisory: every 40k effective context tokens or each 70%+ percentage checkpoint; used wording.",
+      "config": {
+        "nudge": { "mode": "hybrid", "growthTriggerTokens": 40000, "thresholdPercentage": 70, "repeatEveryPercentage": 10, "display": "used" },
+        "emergency": { "enabled": true, "pressureThresholdPercentage": 90, "targetPercentageAfterCompression": 70, "maxAttemptsPerTurn": 2 }
+      }
+    },
+    {
+      "id": "hybrid-20k-70-every10-remaining",
+      "description": "Same hybrid cadence as hybrid-20k-70-every10-used, but advisories use remaining-context wording.",
+      "config": {
+        "nudge": { "mode": "hybrid", "growthTriggerTokens": 20000, "thresholdPercentage": 70, "repeatEveryPercentage": 10, "display": "remaining" },
+        "emergency": { "enabled": true, "pressureThresholdPercentage": 90, "targetPercentageAfterCompression": 70, "maxAttemptsPerTurn": 2 }
+      }
+    },
+    {
+      "id": "hybrid-20k-emergency-85-target65",
+      "description": "Hybrid baseline with earlier emergency recovery at 85%, targeting 65% afterward.",
+      "config": {
+        "nudge": { "mode": "hybrid", "growthTriggerTokens": 20000, "thresholdPercentage": 70, "repeatEveryPercentage": 10, "display": "remaining" },
+        "emergency": { "enabled": true, "pressureThresholdPercentage": 85, "targetPercentageAfterCompression": 65, "maxAttemptsPerTurn": 2 }
+      }
+    }
+  ]
+}

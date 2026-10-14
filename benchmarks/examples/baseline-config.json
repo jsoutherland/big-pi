@@ -1,0 +1,27 @@
+{
+  "nudge": {
+    "mode": "percentage",
+    "growthTriggerTokens": 50000,
+    "thresholdPercentage": 75,
+    "repeatEveryPercentage": 5,
+    "display": "used"
+  },
+  "emergency": {
+    "enabled": true,
+    "pressureThresholdPercentage": 85,
+    "targetPercentageAfterCompression": 70,
+    "maxAttemptsPerTurn": 2
+  },
+  "hierarchy": {
+    "enabled": true,
+    "minBlocksPerPromotion": 3,
+    "tier2NudgeSummaryTokens": 20000,
+    "tier3NudgeSummaryTokens": 20000
+  },
+  "minCompressRangeChars": 5000,
+  "minSummaryRetentionPercent": 2,
+  "protectedRecentMessages": 5,
+  "protectedRecentTokens": 5000,
+  "debug": false,
+  "contextDumpEnabled": true
+}

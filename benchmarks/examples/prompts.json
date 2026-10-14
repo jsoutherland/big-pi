@@ -1,0 +1,13 @@
+{
+  "name": "replace-with-your-repeatable-test",
+  "prompts": [
+    {
+      "id": "setup",
+      "text": "Replace this with a fixed first prompt for your benchmark. Ask for a short response so run-to-run variation stays small."
+    },
+    {
+      "id": "follow-up",
+      "text": "Replace this with a fixed follow-up prompt that depends on earlier context."
+    }
+  ]
+}

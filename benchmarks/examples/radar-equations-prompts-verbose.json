@@ -1,0 +1,85 @@
+{
+  "name": "radar-equations-app-verbose-context",
+  "prompts": [
+    {
+      "id": "app-foundation",
+      "text": "Build a radar-equations learning app in this benchmark project directory. Keep setup intentionally simple: the app must run by opening index.html directly in a browser, with local index.html, styles.css, and app.js files. Use plain HTML, CSS, and browser-native JavaScript only. Do not install packages, create a package/build system, require a development server, use external libraries/assets, or access files outside this project directory. Use Node's built-in test runner for logic tests if available; do not add dependencies. First inspect the existing project, then create the smallest useful foundation and shared equation/variable data model. Do not reset or recreate the project between prompts."
+    },
+    {
+      "id": "select-five-equations",
+      "text": "Continue the existing static app. Add five useful radar equations: monostatic received power, maximum range, signal-to-noise ratio, bistatic received power, and radar cross section. For each, show readable notation, define every symbol, state assumptions/limitations, and specify input and result units. Avoid unexplained duplicate formulations. Keep equation metadata in one structured source of truth shared by the interface and calculation logic. Preserve direct opening of index.html and the no-install/no-server constraint."
+    },
+    {
+      "id": "formula-calculation-audit",
+      "text": "Audit and implement the five equation calculations. Check dimensions, conversion factors, exponent placement, and physical meaning. Prefer SI internally and convert at input/output boundaries. Handle missing, malformed, zero, negative, and out-of-domain values explicitly so NaN/Infinity never appears as a valid result. Add focused Node built-in tests for representative numeric examples and boundary/error cases, using no test dependencies. Summarize assumptions chosen."
+    },
+    {
+      "id": "tab-navigation-layout",
+      "text": "Add one accessible tab per equation to the existing app. Make the selected tab clear, keyboard-operable, and usable at narrow widths; switching tabs must preserve each equation's entered values. Give each tab predictable formula, inputs, result, and explanation sections. Keep everything local and directly runnable from index.html. Add practical tests for the shared tab/equation data and any pure navigation logic; do not introduce a DOM-testing package or server."
+    },
+    {
+      "id": "theme-selector",
+      "text": "Add Light, Dark, and Darcula themes to the existing app. Apply themes consistently to backgrounds, text, controls, tabs, result areas, borders, focus states, errors, and charts. Maintain readable contrast and never communicate status by color alone. Persist the preference using browser-native localStorage with a safe default if storage is unavailable. Add focused tests for theme data/selection and persistence logic without adding dependencies."
+    },
+    {
+      "id": "variable-editing-and-defaults",
+      "text": "Make each equation's variables editable with a clear label, symbol, unit, current value, and concise explanation. Recalculate on valid changes and identify invalid values without silently substituting defaults. Add a reset action for the active equation that preserves theme and other tabs' independent values. Implement validation/reset logic so it can be tested with Node's built-in test runner; keep the browser UI dependency-free."
+    },
+    {
+      "id": "calculation-presentation",
+      "text": "Improve result presentation: show an appropriately precise value and unit, explain briefly how the inputs produce it, and avoid rounding intermediate calculations. Use readable scientific notation for extreme magnitudes and provide the full value in accessible text or a copy action. Test formatting, units, and edge values through focused built-in tests."
+    },
+    {
+      "id": "coverage-report-1",
+      "text": "Run the existing built-in tests and measure actual coverage with Node's native coverage support if available. Aim for 90% only when achievable within the limits below. Do not create or rewrite files, and do not use the write tool. Make at most one edit call in this prompt: add at most one focused behavior test, with oldText no longer than 200 characters and newText no longer than 1,000 characters. If the test file is large or repetitive, or there is no safe insertion point, make no code changes and report the measured coverage and limitation. If any tool call or response is truncated or reports an output-token limit, stop all edits immediately; do not retry or split the call. If an edit fails to match, re-read once and stop if it fails again. Report exact commands and measured results; never estimate coverage."
+    },
+    {
+      "id": "two-dimensional-sweep-design",
+      "text": "Add reusable two-dimensional sweep logic to each equation. Let users select one valid input as x-axis, choose minimum/maximum/sample count, and calculate results while other inputs remain fixed. Validate ranges/counts and cap point counts to keep the browser responsive. Explain dependence on other current inputs. Keep calculation/sampling logic pure and testable with Node built-ins; do not add plotting packages or project setup."
+    },
+    {
+      "id": "sweep-chart-and-export",
+      "text": "Complete sweep visualization using browser-native SVG or canvas, with no chart library. Label axes and units, provide readable ticks and point details, adapt to all themes and narrow screens, and include an equivalent table or text view. Add a reset-to-sensible-range action. Test sample generation, labels/data mapping, invalid ranges, and accessible textual values using dependency-free tests."
+    },
+    {
+      "id": "coverage-report-2",
+      "text": "Run the existing built-in tests and measure actual coverage with Node's native coverage support if available. Aim for 90% only when achievable within the limits below. Do not create or rewrite files, and do not use the write tool. Make at most one edit call in this prompt: add at most one focused behavior test, with oldText no longer than 200 characters and newText no longer than 1,000 characters. If the test file is large or repetitive, or there is no safe insertion point, make no code changes and report the measured coverage and limitation. If any tool call or response is truncated or reports an output-token limit, stop all edits immediately; do not retry or split the call. If an edit fails to match, re-read once and stop if it fails again. Report exact commands and measured results; never estimate coverage."
+    },
+    {
+      "id": "formula-isolation-tab",
+      "text": "Add a tab for isolating supported variables in known equations. Let users choose an equation and an explicitly supported variable, show its rearranged expression, collect remaining values with units, and calculate the result. Do not attempt generic symbolic algebra; explain unsupported cases clearly. Keep known rearrangements modular and add tests for each supported form and numeric result."
+    },
+    {
+      "id": "isolation-validation-and-explanation",
+      "text": "Audit the isolation feature: verify algebraic equivalence, required inputs, units, and invalid domains such as division by zero or negative square-root arguments. Show a short explanation of the rearrangement. Add tests for each supported isolation, numeric round trips through the original equation, invalid domains, and unsupported cases. Fix defects found; keep all tests dependency-free."
+    },
+    {
+      "id": "coverage-report-3",
+      "text": "Run the existing built-in tests and measure actual coverage with Node's native coverage support if available. Aim for 90% only when achievable within the limits below. Do not create or rewrite files, and do not use the write tool. Make at most one edit call in this prompt: add at most one focused behavior test, with oldText no longer than 200 characters and newText no longer than 1,000 characters. If the test file is large or repetitive, or there is no safe insertion point, make no code changes and report the measured coverage and limitation. If any tool call or response is truncated or reports an output-token limit, stop all edits immediately; do not retry or split the call. If an edit fails to match, re-read once and stop if it fails again. Report exact commands and measured results; never estimate coverage."
+    },
+    {
+      "id": "accessibility-and-responsive-review",
+      "text": "Review accessibility and responsive layout across equation tabs, theme control, variable forms, sweep chart/table, reset controls, and isolation. Use semantic HTML, associated labels/errors, visible focus, sensible keyboard behavior, and nonvisual chart data. Fix narrow-screen issues and check contrast in all themes. Add practical tests for accessible metadata and pure keyboard/state logic that do not require a DOM package; rerun the built-in suite."
+    },
+    {
+      "id": "error-handling-and-empty-states",
+      "text": "Review edge states: malformed numbers, unsupported combinations, impossible domains, invalid sweep settings, and unavailable localStorage. Avoid blank panels, uncaught errors, and stale results after invalid input; offer a clear recovery action. Add focused dependency-free tests and confirm normal calculations still work. Keep messages understandable to an engineering student."
+    },
+    {
+      "id": "coverage-report-4",
+      "text": "Run the existing built-in tests and measure actual coverage with Node's native coverage support if available. Aim for 90% only when achievable within the limits below. Do not create or rewrite files, and do not use the write tool. Make at most one edit call in this prompt: add at most one focused behavior test, with oldText no longer than 200 characters and newText no longer than 1,000 characters. If the test file is large or repetitive, or there is no safe insertion point, make no code changes and report the measured coverage and limitation. If any tool call or response is truncated or reports an output-token limit, stop all edits immediately; do not retry or split the call. If an edit fails to match, re-read once and stop if it fails again. Report exact commands and measured results; never estimate coverage."
+    },
+    {
+      "id": "project-quality-review",
+      "text": "Review the project for practical use: index.html should open directly from disk, and every referenced asset must be local. Check equation metadata/calculations, responsive behavior, test and native coverage commands, and accidental generated files. Do not add package scripts, a server, clean-install workflow, or production build. Run the available built-in tests and coverage command; fix straightforward defects and report actual command outcomes and remaining limits."
+    },
+    {
+      "id": "ideas-roadmap",
+      "text": "Create or update ideas.md with at least three concrete improvements beyond the implemented features. For each, explain user benefit, rationale, a practical implementation plan naming likely local files/components, and easy/medium/hard difficulty with a short reason. Prefer ideas extending equations, sweeps, tests, or visualization. Do not implement speculative ideas in this step."
+    },
+    {
+      "id": "final-consistency-and-report",
+      "text": "Finish with a consistency pass across the static app, tests, native coverage report, and ideas.md. Check all five equations and assumptions, units, calculations, sweep axes/data, theme persistence, and that resets preserve unrelated state. Confirm index.html opens directly and the project requires no install, server, external resource, or build. Run the built-in test and coverage commands after final edits. Summarize features, exact test/coverage results, known limitations, and artifact locations; report only checks actually performed."
+    }
+  ]
+}

@@ -1,0 +1,17 @@
+{
+  "name": "live-provider-usage-check",
+  "prompts": [
+    {
+      "id": "exact-response",
+      "text": "Do not use tools. Reply with exactly one word and nothing else: READY."
+    },
+    {
+      "id": "repeat-response",
+      "text": "Do not use tools. What one-word response did you give in the previous step? Reply with only that word."
+    },
+    {
+      "id": "finish-check",
+      "text": "Do not use tools. Reply with exactly these three words and nothing else: USAGE CHECK COMPLETE."
+    }
+  ]
+}

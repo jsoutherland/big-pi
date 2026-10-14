@@ -1,0 +1,49 @@
+{
+  "name": "radar-equations-app",
+  "prompts": [
+    {
+      "id": "top-five-radar-equations",
+      "text": "Create a new javascript application which has the top 5 radar equations, with one per tab. Keep it simple with html/js/css (no node/npm)."
+    },
+    {
+      "id": "theme-indicator",
+      "text": "Make sure there is a theme indicator with at least light/dark/darcula"
+    },
+    {
+      "id": "tab-unit-tests",
+      "text": "Add unit tests for the contents of each tab"
+    },
+    {
+      "id": "coverage-report-1",
+      "text": "Run the existing built-in tests and measure actual coverage with Node's native coverage support if available. Aim for 90% only when achievable within the limits below. Do not create or rewrite files, and do not use the write tool. Make at most one edit call in this prompt: add at most one focused behavior test, with oldText no longer than 200 characters and newText no longer than 1,000 characters. If the test file is large or repetitive, or there is no safe insertion point, make no code changes and report the measured coverage and limitation. If any tool call or response is truncated or reports an output-token limit, stop all edits immediately; do not retry or split the call. If an edit fails to match, re-read once and stop if it fails again. Report exact commands and measured results; never estimate coverage."
+    },
+    {
+      "id": "editable-variables-and-reset",
+      "text": "Make sure that in addition to showing the formulas, you can enter/tweak variables for calculating the results. There should be an option to reset to defaults"
+    },
+    {
+      "id": "coverage-report-2",
+      "text": "Run the existing built-in tests and measure actual coverage with Node's native coverage support if available. Aim for 90% only when achievable within the limits below. Do not create or rewrite files, and do not use the write tool. Make at most one edit call in this prompt: add at most one focused behavior test, with oldText no longer than 200 characters and newText no longer than 1,000 characters. If the test file is large or repetitive, or there is no safe insertion point, make no code changes and report the measured coverage and limitation. If any tool call or response is truncated or reports an output-token limit, stop all edits immediately; do not retry or split the call. If an edit fails to match, re-read once and stop if it fails again. Report exact commands and measured results; never estimate coverage."
+    },
+    {
+      "id": "two-dimensional-sweeps",
+      "text": "Make it possible to render 2d sweeps for each equation/tab, where x is a chosen variable and y is the calculation result"
+    },
+    {
+      "id": "coverage-report-3",
+      "text": "Run the existing built-in tests and measure actual coverage with Node's native coverage support if available. Aim for 90% only when achievable within the limits below. Do not create or rewrite files, and do not use the write tool. Make at most one edit call in this prompt: add at most one focused behavior test, with oldText no longer than 200 characters and newText no longer than 1,000 characters. If the test file is large or repetitive, or there is no safe insertion point, make no code changes and report the measured coverage and limitation. If any tool call or response is truncated or reports an output-token limit, stop all edits immediately; do not retry or split the call. If an edit fails to match, re-read once and stop if it fails again. Report exact commands and measured results; never estimate coverage."
+    },
+    {
+      "id": "formula-factorization-tab",
+      "text": "Make another tab that lets you choose any other formula and factor it to isolate a given variable"
+    },
+    {
+      "id": "coverage-report-4",
+      "text": "Run the existing built-in tests and measure actual coverage with Node's native coverage support if available. Aim for 90% only when achievable within the limits below. Do not create or rewrite files, and do not use the write tool. Make at most one edit call in this prompt: add at most one focused behavior test, with oldText no longer than 200 characters and newText no longer than 1,000 characters. If the test file is large or repetitive, or there is no safe insertion point, make no code changes and report the measured coverage and limitation. If any tool call or response is truncated or reports an output-token limit, stop all edits immediately; do not retry or split the call. If an edit fails to match, re-read once and stop if it fails again. Report exact commands and measured results; never estimate coverage."
+    },
+    {
+      "id": "project-improvement-ideas",
+      "text": "Recommend at least 3 ways to improve the project and write them to ideas.md. Justify the merit for each, implementation plan, and expected difficulty."
+    }
+  ]
+}

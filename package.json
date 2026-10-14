@@ -1,0 +1,22 @@
+{
+  "name": "big-pi",
+  "version": "0.1.0",
+  "type": "module",
+  "description": "Standalone incremental context compression extension for Pi",
+  "license": "Apache-2.0",
+  "keywords": [
+    "pi-package",
+    "pi-extension",
+    "context-compression"
+  ],
+  "pi": {
+    "extensions": [
+      "./index.js"
+    ]
+  },
+  "scripts": {
+    "test": "node --test test/*.test.js test/*.test.mjs",
+    "release": "npm test && node --check index.js && node --check lib/big-pi.js && node --check scripts/release.js && node --check scripts/archive-release.js && node --check scripts/verify-release.js && node scripts/release.js",
+    "release:archive": "npm run release && node scripts/archive-release.js"
+  }
+}
