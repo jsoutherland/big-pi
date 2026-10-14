@@ -43,7 +43,6 @@ mkdirSync(releaseDirectory, { recursive: true });
 const approvedFiles = [
   "README.md",
   "START_HERE.md",
-  "CHANGELOG.md",
   "LICENSE",
   "index.js",
 ];
