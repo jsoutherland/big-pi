@@ -56,3 +56,15 @@ big-pi has no third-party runtime dependencies. It supports installation from a 
 - [Configuration reference](docs/CONFIGURATION.md)
 - [Diagnostics and troubleshooting](docs/DIAGNOSTICS.md)
 - [Architecture](docs/ARCHITECTURE.md)
+
+
+## Contributing
+
+I’m not accepting general pull requests at this time, unless we already know each other and have discussed the change.
+
+Issues are very welcome, though. If you find a bug, have a feature request, or want to suggest an improvement, please open an issue.
+
+
+## License
+
+Apache License 2.0. See [`LICENSE`](LICENSE).
